@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/Dorahicon18.png" rel="icon">
+    <link href="assets/img/Dorahicon18.png" rel="icon">
+
+    <title>My Orders-Page</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #420707;
+            color: #9b2020;
+        }
+
+        /* Header */
+
+        .orders-header {
+            background: #2b040b;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .orders-header h1 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .orders-header p {
+            margin: 0;
+            color: #f5dddd;
+        }
+
+        /* Main */
+
+        .orders-container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        /* Order Card */
+
+        .order-card {
+            background: rgb(175, 38, 38);
+            border-radius: 18px;
+            margin-bottom: 25px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .order-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(109,7,26,0.15);
+        }
+
+        /* Order Header */
+
+        .order-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 18px;
+            margin-bottom: 20px;
+        }
+
+        .order-number {
+            color: #6D071A;
+            font-weight: 700;
+        }
+
+        .order-date {
+            color: #f8f5f5;
+            font-size: 14px;
+        }
+
+        /* Status */
+
+        .status {
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .delivered {
+            background: #f7e7e7;
+            color: #218838;
+        }
+
+        .processing {
+            background: #fff4d6;
+            color: #9a7100;
+        }
+
+        .cancelled {
+            background: #fdeaea;
+            color: #dc3545;
+        }
+
+        /* Products */
+
+        .products {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .product {
+            min-width: 180px;
+            background: #da3c3c;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .product img {
+            width: 180px;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 12px;
+        }
+
+        .product-info h5 {
+            color: #6D071A;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .product-info p {
+            color: #f5f1f1;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: #D4AF37;
+            font-weight: bold;
+        }
+
+        /* Order Bottom */
+
+        .order-bottom {
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+            padding-top: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #6D071A;
+        }
+
+        /* Buttons */
+
+        .order-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            background: #6D071A;
+            color: white;
+            margin-left: 8px;
+            transition: 0.3s;
+        }
+
+        .order-btn:hover {
+            background: #D4AF37;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .outline-btn {
+            background: white;
+            color: #6D071A;
+            border: 2px solid #6D071A;
+        }
+
+        .outline-btn:hover {
+            background: #6D071A;
+            color: white;
+        }
+
+        /* Empty Orders */
+
+        .empty-orders {
+            background: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 20px;
+            display: none;
+        }
+
+        .empty-orders i {
+            font-size: 60px;
+            color: #D4AF37;
+        }
+
+        .empty-orders h3 {
+            color: #6D071A;
+            margin-top: 15px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .order-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .order-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .order-actions {
+                width: 100%;
+            }
+
+            .order-btn {
+                display: inline-block;
+                margin: 5px 5px 5px 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header class="orders-header">
+
+    <h1>
+        <i class="bi bi-bag-check-fill"></i>
+        My Orders
+    </h1>
+
+    <p>
+        View and manage all your The Corporate Closet orders.
+    </p>
+
+</header>
+
+
+<!-- Orders -->
+
+<main class="orders-container">
+
+
+    <!-- ORDER 1 -->
+
+    <div class="order-card">
+
+        <div class="order-top">
+
+            <div>
+                <div class="order-number">
+                    Order #DLX1001
+                </div>
+
+                <div class="order-date">
+                    Placed on 05 August 2026
+                </div>
+            </div>
+
+            <span class="status delivered">
+                Delivered
+            </span>
+
+        </div>
+
+
+        <div class="products">
+
+            <div class="product">
+
+                <img src="assets/img/cloth1.jpg" alt="Luxury Dress">
+
+                <div class="product-info">
+
+                    <h5>White Top</h5>
+
+                    <p>Quantity: 1</p>
+
+                    <div class="product-price">
+                        KSh 600
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img src="assets/img/cloth7.jpg" alt="Office Blazer">
+
+                <div class="product-info">
+
+                    <h5>Checked Red Top</h5>
+
+                    <p>Quantity: 1</p>
+
+                    <div class="product-price">
+                        KSh  300
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-bottom">
+
+            <div class="total">
+                Total: KSh 900
+            </div>
+
+            <div class="order-actions">
+
+                <a href="Orderconformation.html"
+                   class="order-btn">
+                    <i class="bi bi-eye"></i>
+                    View Order
+                </a>
+
+                <a href="shop.html"
+                   class="order-btn outline-btn">
+                    Shop Again
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ORDER 2 -->
+
+    <div class="order-card">
+
+        <div class="order-top">
+
+            <div>
+
+                <div class="order-number">
+                    Order #DLX1002
+                </div>
+
+                <div class="order-date">
+                    Placed on 28 July 2026
+                </div>
+
+            </div>
+
+            <span class="status processing">
+                Processing
+            </span>
+
+        </div>
+
+
+        <div class="products">
+
+            <div class="product">
+
+                <img src="assets/img/cloth3.jpg"
+                     alt="Luxury Handbag">
+
+                <div class="product-info">
+
+                    <h5>Casual Wear</h5>
+
+                    <p>Quantity: 1</p>
+
+                    <div class="product-price">
+                        KSh 300
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img src="assets/img/cloth17.jpg"
+                     alt="Custom made">
+
+                <div class="product-info">
+
+                    <h5>Custom made</h5>
+
+                    <p>Quantity: 1</p>
+
+                    <div class="product-price">
+                        KSh 300
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-bottom">
+
+            <div class="total">
+                Total: KSh 600
+            </div>
+
+            <div class="order-actions">
+
+                <a href="Orderconformation.html"
+                   class="order-btn">
+
+                    <i class="bi bi-eye"></i>
+                    View Order
+
+                </a>
+
+                <a href="shop.html"
+                   class="order-btn outline-btn">
+
+                    Shop Again
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ORDER 3 -->
+
+    <div class="order-card">
+
+        <div class="order-top">
+
+            <div>
+
+                <div class="order-number">
+                    Order #DLX1003
+                </div>
+
+                <div class="order-date">
+                    Placed on 15 July 2026
+                </div>
+
+            </div>
+
+            <span class="status cancelled">
+                Cancelled
+            </span>
+
+        </div>
+
+
+        <div class="products">
+
+            <div class="product">
+
+                <img src="assets/img/cloth20.jpg"
+                     alt="Peach Blouse">
+
+                <div class="product-info">
+
+                    <h5>Peach Blouse</h5>
+
+                    <p>Quantity: 1</p>
+
+                    <div class="product-price">
+                        KSh 600
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-bottom">
+
+            <div class="total">
+                Total: KSh 600
+            </div>
+
+            <div class="order-actions">
+
+                <a href="Orderconformation.html"
+                   class="order-btn">
+
+                    <i class="bi bi-eye"></i>
+                    View Order
+
+                </a>
+
+                <a href="shop.html"
+                   class="order-btn outline-btn">
+
+                    Shop Again
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+```

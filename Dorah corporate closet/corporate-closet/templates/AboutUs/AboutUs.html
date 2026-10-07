@@ -1,0 +1,345 @@
+
+{% load static %}
+
+< !DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link href="{% static 'assets/img/Dorah4.png' %}" rel="icon">
+
+    <title>About Us - The Corporate Closet</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+
+
+    <style>
+
+        body {
+            background: #6D071A;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Main Container */
+
+        .about-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background: #c73939;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+        }
+
+        /* Hero */
+
+        .hero {
+            background: #ad3737;
+            color: white;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        /* About */
+
+        .about-content {
+            padding: 50px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+        }
+
+        /* Titles */
+
+        .section-title {
+            color: #6D071A;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Feature Cards */
+
+        .feature-card {
+            background: #fcf8f8;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: .3s;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(109, 7, 26, .2);
+        }
+
+        .feature-card i {
+            font-size: 45px;
+            color: #D4AF37;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h5 {
+            color: #6D071A;
+            font-weight: bold;
+        }
+
+        /* Mission */
+
+        .mission {
+            background: #6D071A;
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .mission h3 {
+            color: #D4AF37;
+        }
+
+        /* Button */
+
+        .shop-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #D4AF37;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .shop-btn:hover {
+            background: #b82b2b;
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="about-container">
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <h1>About The Corporate Closet</h1>
+
+        <p>Where elegance meets confidence.</p>
+
+    </div>
+
+
+    <!-- ABOUT CONTENT -->
+
+    <div class="about-content">
+
+        <div class="row align-items-center">
+
+            <!-- IMAGE -->
+
+            <div class="col-lg-6 about-image">
+
+                <img
+                        src="{% static 'assets/img/cloth7.jpg' %}"
+                        alt="The Corporate Closet"
+                >
+
+            </div>
+
+
+            <!-- STORY -->
+
+            <div class="col-lg-6">
+
+                <h2 class="section-title">Our Story</h2>
+
+                <p>
+                    We started The Corporate Closet because getting dressed
+                    for work should feel powerful, not stressful. We know
+                    that walking into a boardroom or logging onto a video
+                    call takes confidence. The right outfit gives you that
+                    boost.
+                </p>
+
+                <p>
+                    We curate sharp, stylish, and comfortable professional
+                    clothing that helps you look as capable as you truly are.
+                </p>
+
+                <p>
+                    Timeless pieces mixed with fresh, contemporary style.
+                    Professional fashion tailored for every career path.
+                </p>
+
+
+                <!-- PRODUCTS BUTTON -->
+
+                <a href="{% url 'products' %}" class="shop-btn">
+
+                    <i class="bi bi-bag-fill"></i>
+
+                    View Products
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <hr class="my-5">
+
+
+        <!-- WHY CHOOSE US -->
+
+        <h2 class="section-title text-center mb-5">
+
+            Why Choose The Corporate Closet?
+
+        </h2>
+
+
+        <div class="row g-4">
+
+
+            <!-- CARD 1 -->
+
+            <div class="col-lg-4">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-stars"></i>
+
+                    <h5>Premium Quality</h5>
+
+                    <p>
+                        Every product is carefully selected to ensure
+                        elegance, durability, and comfort.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="col-lg-4">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-truck"></i>
+
+                    <h5>Fast Delivery</h5>
+
+                    <p>
+                        Reliable and timely delivery to ensure your fashion
+                        arrives safely.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="col-lg-4">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-heart-fill"></i>
+
+                    <h5>Customer Satisfaction</h5>
+
+                    <p>
+                        Our customers are our priority. We strive to provide
+                        excellent service every day.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MISSION & VISION -->
+
+        <div class="mission">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+                        To provide elegant, affordable, and high-quality
+                        fashion that empowers women to express themselves
+                        with confidence.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+                        To become one of Kenya's most trusted online fashion
+                        destinations, known for style, quality, and exceptional
+                        customer experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/Dorah5icon.png" rel="icon">
+    <link href="assets/img/Dorah5icon.png" rel="icon">
+
+    <title>Our Products-Page</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#6D071A;
+            font-family:'Poppins',sans-serif;
+        }
+
+        /* Main Container */
+
+        .container{
+            width:95%;
+            margin:auto;
+            padding:40px 0;
+        }
+
+        /* Heading */
+
+        .page-title{
+            text-align:center;
+            color:white;
+            margin-bottom:40px;
+        }
+
+        .page-title h1{
+            font-weight:bold;
+        }
+
+        .page-title p{
+            color:#f1f1f1;
+        }
+
+        /* Products Across */
+
+        .wishlist-products{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:25px;
+        }
+
+        /* Product Card */
+
+        .wishlist-card{
+            width:260px;
+            background:rgb(197, 73, 73);
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 10px 25px rgba(0,0,0,.2);
+            transition:.4s;
+        }
+
+        .wishlist-card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 15px 35px rgba(0,0,0,.3);
+        }
+
+        /* Images */
+
+        .wishlist-card img{
+            width:100%;
+            height:320px;
+            object-fit:cover;
+        }
+
+        /* Product Details */
+
+        .wishlist-content{
+            padding:20px;
+            text-align:center;
+        }
+
+        .wishlist-content h4{
+            color:#6D071A;
+            font-weight:bold;
+        }
+
+        .wishlist-content p{
+            color:#412020;
+            font-size:14px;
+        }
+
+        .price{
+            color:#D4AF37;
+            font-size:22px;
+            font-weight:bold;
+            margin:15px 0;
+        }
+
+        /* Buttons */
+
+        .btn-cart{
+
+            width:100%;
+            border:none;
+            background:#6D071A;
+            color:white;
+            padding:12px;
+            border-radius:30px;
+            margin-bottom:10px;
+            transition:.3s;
+
+        }
+
+        .btn-cart:hover{
+
+            background:#8B1E3F;
+
+        }
+
+        .btn-remove{
+
+            width:100%;
+            border:2px solid #dc3545;
+            background:white;
+            color:#dc3545;
+            padding:12px;
+            border-radius:30px;
+            transition:.3s;
+
+        }
+
+        .btn-remove:hover{
+
+            background:#dc3545;
+            color:white;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="page-title">
+
+        <h1><i class=""></i>OUR PRODUCTS</h1>
+
+        <p>What would you like to wear?</p>
+
+    </div>
+
+    <div class="wishlist-products">
+
+        <!-- Product 1 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth1.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>White Top</h4>
+
+                <p>Timeless and versatile.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 2 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth23.webp" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Pink Blouse</h4>
+
+                <p>A unique girly blouse just for you.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 3 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth3.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Casual Wear</h4>
+
+                <p>Casual, luxurious & boho-chic.</p>
+
+                <div class="price">KSh 300</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Product 4 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth24.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Stripped Top</h4>
+
+                <p>Effortless Parisian chic.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 5 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth7.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Checked Red Top</h4>
+
+                <p>Charming &structured pattern to your look</p>
+
+                <div class="price">KSh 300</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 6 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth8.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Brown Blouse</h4>
+
+                <p>A brown top delivers a warm & earthy sophistication</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 8 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth11.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Oversized Top</h4>
+
+                <p>Delivers the ultimate blend of laid-back comfort.</p>
+
+                <div class="price">KSh 300</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 9 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth17.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Custom made</h4>
+
+                <p> Offers a flawless, personalized fit .</p>
+
+                <div class="price">KSh 300</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Product 11 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth18.webp" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Corporate Wear</h4>
+
+                <p>Unique to elevate your individual style and shape..</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 11 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth20.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Peach Blouse</h4>
+
+                <p>Infuses your wardrobe with a fresh, radiant warmth.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 12 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth21.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Official Top</h4>
+
+                <p>Complements any skin tone..</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 13 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth5.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>White Bodysuit</h4>
+
+                <p>Creates a perfectly tucked, flawless silhouette.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Product 14 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth6.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>White top</h4>
+
+                <p>Polished and bunch-free all day long.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 15 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth14.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Yellow Blouse</h4>
+
+                <p><Inp></Inp>njects an instant burst of cheerful energy.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 16 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth15.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Maroon Shirt</h4>
+
+                <p>Effortless luxury.</p>
+
+                <div class="price">KSh 300</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Product 16-->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth16.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Deep Chocolate</h4>
+
+                <p>Velvety warmth that serves as a modern.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 17 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth26.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Burgundy</h4>
+
+                <p>A rich, jewel-toned elegance.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Product 18 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth27.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Stripped Blue</h4>
+
+                <p>Fresh & nautical-inspired charm.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Product 19 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth28.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Green Blouse</h4>
+
+                <p>nature-inspired energy that instantly breathes life.</p>
+
+                <div class="price">KSh 600</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 20 -->
+
+        <div class="wishlist-card">
+
+            <img src="assets/img/cloth30.jpg" alt="">
+
+            <div class="wishlist-content">
+
+                <h4>Polka Dots</h4>
+
+                <p>Adds a playful yet sophisticated retro charm.</p>
+
+                <div class="price">KSh 300</div>
+
+                <button class="btn-cart">
+
+                    <i class="bi bi-cart-plus-fill"></i>
+
+                    Add to Cart
+
+                </button>
+
+                <button class="btn-remove">
+
+                    <i class="bi bi-trash-fill"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

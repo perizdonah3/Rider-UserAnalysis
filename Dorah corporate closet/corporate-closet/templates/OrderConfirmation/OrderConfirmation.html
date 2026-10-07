@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/Dorahicon9.png" rel="icon">
+    <link href="assets/img/Dorahicon9.png" rel="icon">
+
+    <title>Order Confirmation-Page</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#6D071A;
+            font-family:'Poppins',sans-serif;
+        }
+
+        .confirmation-card{
+
+            max-width:900px;
+
+            margin:50px auto;
+
+            background:rgb(182, 51, 51);
+
+            border-radius:25px;
+
+            padding:50px;
+
+            box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+        }
+
+        .success{
+
+            font-size:90px;
+
+            color:#e4c22e;
+
+        }
+
+        .order-number{
+
+            background:#f5f5f5;
+
+            padding:15px;
+
+            border-radius:15px;
+
+            margin:25px 0;
+
+        }
+
+        .product{
+
+            display:flex;
+
+            align-items:center;
+
+            margin-bottom:20px;
+
+        }
+
+        .product img{
+
+            width:90px;
+
+            height:90px;
+
+            object-fit:cover;
+
+            border-radius:12px;
+
+        }
+
+        .product-info{
+
+            margin-left:20px;
+
+        }
+
+        .summary{
+
+            background:#fafafa;
+
+            padding:25px;
+
+            border-radius:15px;
+
+        }
+
+        .btn-maroon{
+
+            background:#6D071A;
+
+            color:white;
+
+            border:none;
+
+            border-radius:30px;
+
+            padding:12px 25px;
+
+        }
+
+        .btn-maroon:hover{
+
+            background:#8B1E3F;
+
+            color:white;
+
+        }
+
+        .btn-outline-maroon{
+
+            border:2px solid #6D071A;
+
+            color:#6D071A;
+
+            border-radius:30px;
+
+            padding:12px 25px;
+
+        }
+
+        .btn-outline-maroon:hover{
+
+            background:#6D071A;
+
+            color:white;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="confirmation-card text-center">
+
+        <i class="bi bi-check-circle-fill success"></i>
+
+        <h2 class="mt-3">Thank You For Your Order!</h2>
+
+        <p class="text-muted">
+
+            Your order has been placed successfully.
+
+        </p>
+
+        <div class="order-number">
+
+            <strong>Order Number:</strong>
+
+            #DLX102548
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-7">
+
+                <h4 class="mb-4">Items Ordered</h4>
+
+                <div class="product">
+
+                    <img src="assets/img/cloth22.jpg">
+
+                    <div class="product-info text-start">
+
+                        <h6>Pink T-shirt</h6>
+
+                        <p>Quantity: 1</p>
+
+                        <strong>KSh 600</strong>
+
+                    </div>
+
+                </div>
+
+                <div class="product">
+
+                    <img src="assets/img/cloth20.jpg">
+
+                    <div class="product-info text-start">
+
+                        <h6>White Blouse</h6>
+
+                        <p>Quantity: 1</p>
+
+                        <strong>KSh 600</strong>
+
+                    </div>
+
+
+                </div>
+                <div class="product">
+
+                    <img src="assets/img/cloth7.jpg">
+
+                    <div class="product-info text-start">
+
+                        <h6>Casual Top </h6>
+
+                        <p>Quantity: 1</p>
+
+                        <strong>KSh 300</strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="summary text-start">
+
+                    <h5>Order Summary</h5>
+
+                    <hr>
+
+                    <p><strong>Total:</strong> KSh 1,500</p>
+
+                    <p><strong>Delivery:</strong> KSh 200</p>
+
+                    <p><strong>Amount Paid:</strong> <span class="text-success">KSh 1,700</span></p>
+
+                    <p><strong>Delivery Address:</strong><br>
+
+                        Westlands, Nairobi</p>
+
+                    <p><strong>Estimated Delivery:</strong><br>
+
+                        1–2 Business Days</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mt-5">
+
+            <a href="wishlist.html" class="btn btn-maroon me-3">
+
+                <i class="bi bi-bag-fill"></i>
+
+                Continue Shopping
+
+            </a>
+
+            <a href="#" class="btn btn-outline-maroon">
+
+                <i class="bi bi-download"></i>
+
+                Download Receipt
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

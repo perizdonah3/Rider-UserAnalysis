@@ -1,0 +1,17 @@
+
+{% block content %}
+<h2>Book An Appointment</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Your Name">
+    <input type="email" name="name" placeholder="Your Name">
+    <input type="text" name="name" placeholder="Your Name">
+    <input type="date" name="name" placeholder="Your Name">
+    <input type="time" name="name" placeholder="Your Name">
+    <textarea name="notes" placeholder="Notes"></textarea><br>
+    <button type="submit">Book Now</button>
+
+
+</form>
+{% endblock %}

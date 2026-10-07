@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/Dorahicon7.png" rel="icon">
+    <link href="assets/img/Dorahicon7.png" rel="icon">
+
+    <title>Contact -Page</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+
+    <style>
+
+        body{
+            background:#6D071A;
+            font-family:'Poppins',sans-serif;
+        }
+
+        /* Main Container */
+        .contact-container{
+            background:rgb(192, 41, 41);
+            max-width:1100px;
+            margin:50px auto;
+            border-radius:20px;
+            padding:40px;
+            box-shadow:0 15px 35px rgba(0,0,0,.25);
+        }
+
+        /* Headings */
+        .section-title{
+            color:#6D071A;
+            font-weight:bold;
+            margin-bottom:10px;
+        }
+
+        .section-subtitle{
+            color:rgb(243, 236, 236);
+            margin-bottom:30px;
+        }
+
+        /* Inputs */
+        .form-control{
+            border-radius:12px;
+            padding:12px;
+        }
+
+        .form-control:focus{
+            border-color:#D4AF37;
+            box-shadow:0 0 8px rgba(212,175,55,.4);
+        }
+
+        /* Contact Info */
+        .contact-info{
+            background:#f8f8f8;
+            padding:30px;
+            border-radius:15px;
+        }
+
+        .contact-info i{
+            font-size:28px;
+            color:#D4AF37;
+        }
+
+        .contact-info h5{
+            color:#6D071A;
+            margin-top:10px;
+        }
+
+        /* Button */
+        .btn-contact{
+            width:100%;
+            background:#6D071A;
+            color:white;
+            border:none;
+            border-radius:30px;
+            padding:14px;
+            font-size:18px;
+            transition:.3s;
+        }
+
+        .btn-contact:hover{
+            background:#8B1E3F;
+            color:white;
+        }
+
+        /* Social Icons */
+        .social-icons a{
+            width:45px;
+            height:45px;
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            background:#6D071A;
+            color:white;
+            border-radius:50%;
+            margin-right:10px;
+            text-decoration:none;
+            transition:.3s;
+        }
+
+        .social-icons a:hover{
+            background:#D4AF37;
+            color:white;
+        }
+
+        /* Map */
+        iframe{
+            width:100%;
+            height:300px;
+            border:none;
+            border-radius:15px;
+            margin-top:30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="contact-container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">Contact The Corporate </h2>
+
+            <p class="section-subtitle">
+                We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            <!-- Contact Form -->
+
+            <div class="col-lg-7">
+
+                <form>
+
+                    <div class="mb-3">
+
+                        <label>Full Name</label>
+
+                        <input type="text" class="form-control" placeholder="Enter your full name">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Email Address</label>
+
+                        <input type="email" class="form-control" placeholder="Enter your email">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Subject</label>
+
+                        <input type="text" class="form-control" placeholder="Subject">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Your Message</label>
+
+                        <textarea class="form-control" rows="6" placeholder="Type your message here"></textarea>
+
+                    </div>
+
+                    <button class="btn-contact">
+
+                        <i class="bi bi-send-fill"></i>
+
+                        Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- Contact Information -->
+
+            <div class="col-lg-5">
+
+                <div class="contact-info">
+
+                    <h4 class="mb-4">Contact Information</h4>
+
+                    <p>
+
+                        <i class="bi bi-geo-alt-fill"></i><br>
+
+                        <strong>Address</strong><br>
+
+                        Nairobi, Kenya
+
+                    </p>
+
+                    <hr>
+
+                    <p>
+
+                        <i class="bi bi-telephone-fill"></i><br>
+
+                        <strong>Phone</strong><br>
+
+                        +254 712 345 678
+
+                    </p>
+
+                    <hr>
+
+                    <p>
+
+                        <i class="bi bi-envelope-fill"></i><br>
+
+                        <strong>Email</strong><br>
+
+                        info@dorahluxe.com
+
+                    </p>
+
+                    <hr>
+
+                    <h5>Follow Us</h5>
+
+                    <div class="social-icons mt-3">
+
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Google Map -->
+
+        <iframe
+                src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed">
+        </iframe>
+
+    </div>
+
+</div>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

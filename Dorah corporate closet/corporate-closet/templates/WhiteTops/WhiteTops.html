@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/Dorahicon19.png" rel="icon">
+    <link href="assets/img/Dorahicon19.png" rel="icon">
+
+    <title>White Tops</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #7e1010;
+            color: #0e0606;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .dress-hero {
+            min-height: 420px;
+
+            background:
+                linear-gradient(
+                    rgba(148, 28, 50, 0.72),
+                    rgba(109, 7, 26, 0.72)
+                ),
+                url("assets/img/cloth31.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 50px 20px;
+        }
+
+        .dress-hero h1 {
+            font-size: 55px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .dress-hero h1 span {
+            color: #D4AF37;
+        }
+
+        .dress-hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .dress-container {
+            width: 92%;
+            max-width: 1250px;
+            margin: 55px auto;
+        }
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            color: #140508;
+            font-size: 34px;
+            font-weight: 700;
+        }
+
+        .section-heading p {
+            color: #0a0202;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .dress-products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .dress-card {
+            background: rgb(194, 46, 46);
+            border-radius: 20px;
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.1);
+
+            transition: all 0.4s ease;
+
+            position: relative;
+        }
+
+        .dress-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 40px rgba(109, 7, 26, 0.2);
+        }
+
+        /* =========================
+           IMAGE
+        ========================= */
+
+        .dress-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dress-image img {
+            width: 100%;
+            height: 330px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .dress-card:hover .dress-image img {
+            transform: scale(1.05);
+        }
+
+        /* =========================
+           WISHLIST
+        ========================= */
+
+        .wishlist {
+            position: absolute;
+
+            top: 15px;
+            right: 15px;
+
+            width: 42px;
+            height: 42px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: white;
+            color: #6D071A;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .wishlist:hover {
+            background: #6D071A;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* =========================
+           PRODUCT INFO
+        ========================= */
+
+        .dress-info {
+            padding: 20px;
+        }
+
+        .dress-info h3 {
+            color: #6D071A;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .dress-info p {
+            color: #0f0303;
+            font-size: 17px;
+            line-height: 1.6;
+            min-height: 45px;
+        }
+
+        /* =========================
+           RATING
+        ========================= */
+
+        .rating {
+            color: #D4AF37;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           PRICE
+        ========================= */
+
+        .price {
+            color: #D4AF37;
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .cart-btn {
+            width: 100%;
+
+            border: 2px solid #6D071A;
+
+            background: #6D071A;
+            color: white;
+
+            padding: 12px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+        }
+
+        .cart-btn:hover {
+            background: #D4AF37;
+            border-color: #D4AF37;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        /* =========================
+           BACK TO SHOP
+        ========================= */
+
+        .back-shop {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .back-btn {
+            display: inline-block;
+
+            padding: 12px 30px;
+
+            border: 2px solid #b60f2e;
+
+            border-radius: 30px;
+
+            color: #eec8cf;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #6D071A;
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .dress-products {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        @media (max-width: 800px) {
+
+            .dress-products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dress-hero h1 {
+                font-size: 42px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .dress-products {
+                grid-template-columns: 1fr;
+            }
+
+            .dress-hero {
+                min-height: 350px;
+            }
+
+            .dress-hero h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="dress-hero">
+
+    <div>
+
+        <h1>
+            The<span>Corporate Closet </span> White Tops
+        </h1>
+
+        <p>
+            Discover elegant dresses carefully selected
+            for every occasion. From timeless classics
+            to modern statement pieces.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<main class="dress-container">
+
+
+    <div class="section-heading">
+
+        <h2>Our White Tops Collection</h2>
+
+        <p>
+            Find the perfect blouses for your style and occasion.
+        </p>
+
+    </div>
+
+
+    <div class="dress-products">
+
+
+        <!-- DRESS 1 -->
+
+        <div class="dress-card">
+
+            <div class="dress-image">
+
+                <img
+                        src="assets/img/cloth17.jpg"
+                        alt="Top 1">
+
+                <button class="wishlist">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="dress-info">
+
+                <h3>White Top 1</h3>
+
+                <p>
+                    Radiate style with white top, a bright and modern essential creates a clean canvas for any look.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 1')">
+
+                    <i class="bi bi-cart-plus"></i>
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DRESS 2 -->
+
+        <div class="dress-card">
+
+            <div class="dress-image">
+
+                <img
+                        src="assets/img/cloth2.jpg"
+                        alt="Top 2">
+
+                <button class="wishlist">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="dress-info">
+
+                <h3>White Top 2</h3>
+
+                <p>
+                    Brighten your wardrobe with this fresh white top, offering a sleek, polished look that transitions beautifully from day to night.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 2')">
+
+                    <i class="bi bi-cart-plus"></i>
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DRESS 3 -->
+
+        <div class="dress-card">
+
+            <div class="dress-image">
+
+                <img
+                        src="assets/img/cloth6.jpg"
+                        alt="Top 3">
+
+                <button class="wishlist">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="dress-info">
+
+                <h3>White Top 3</h3>
+
+                <p>
+                    This timeless white top delivers a crisp, minimalist appeal that keeps your outfit looking instantly chic and effortlessly put together.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 3')">
+
+                    <i class="bi bi-cart-plus"></i>
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DRESS 4 -->
+
+        <div class="dress-card">
+
+            <div class="dress-image">
+
+                <img
+                        src="assets/img/cloth18.webp"
+                        alt="Top 4">
+
+                <button class="wishlist">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="dress-info">
+
+                <h3>White Top 4</h3>
+
+                <p>
+                    Provides a fresh, modern aesthetic, brings clean energy and endless styling possibilities to your daily wardrobe.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 4')">
+
+                    <i class="bi bi-cart-plus"></i>
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- BACK BUTTON -->
+
+    <div class="back-shop">
+
+        <a href="shop.html" class="back-btn">
+
+            <i class="bi bi-arrow-left"></i>
+
+            Back to Shop
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+    function addToCart(product) {
+
+        alert(product + " has been added to your cart!");
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
+

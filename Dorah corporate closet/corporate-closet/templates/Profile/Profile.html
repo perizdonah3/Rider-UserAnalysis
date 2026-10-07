@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/Dorahicon6.png" rel="icon">
+    <link href="assets/img/Dorahicon6.png" rel="icon">
+
+    <title>Profile-Page</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#6D071A;
+            font-family:'Poppins',sans-serif;
+        }
+
+        /* Main Card */
+
+        .profile-card{
+
+            max-width:950px;
+
+            margin:50px auto;
+
+            background:rgb(184, 58, 58);
+
+            border-radius:25px;
+
+            overflow:hidden;
+
+            box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+        }
+
+        /* Left Side */
+
+        .profile-left{
+
+            background:#6D071A;
+
+            color:white;
+
+            padding:40px;
+
+            text-align:center;
+
+        }
+
+        .profile-left img{
+
+            width:170px;
+
+            height:170px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+
+            border:6px solid #D4AF37;
+
+        }
+
+        .upload-btn{
+
+            background:#D4AF37;
+
+            color:white;
+
+            border:none;
+
+            border-radius:25px;
+
+            padding:10px 20px;
+
+            margin-top:20px;
+
+        }
+
+        .upload-btn:hover{
+
+            background:#b89228;
+
+        }
+
+        /* Right Side */
+
+        .profile-right{
+
+            padding:40px;
+
+        }
+
+        .profile-right h2{
+
+            color:#6D071A;
+
+            font-weight:bold;
+
+        }
+
+        label{
+
+            font-weight:600;
+
+            margin-top:15px;
+
+        }
+
+        .form-control{
+
+            border-radius:12px;
+
+            padding:12px;
+
+        }
+
+        /* Buttons */
+
+        .profile-btn{
+
+            width:100%;
+
+            background:#6D071A;
+
+            color:white;
+
+            border:none;
+
+            border-radius:30px;
+
+            padding:12px;
+
+            margin-top:15px;
+
+            transition:.3s;
+
+        }
+
+        .profile-btn:hover{
+
+            background:#8B1E3F;
+
+            color:white;
+
+        }
+
+        .logout{
+
+            background:#da2335;
+
+        }
+
+        .logout:hover{
+
+            background:#bb2d3b;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="profile-card">
+
+        <div class="row g-0">
+
+            <!-- LEFT SIDE -->
+
+            <div class="col-lg-4 profile-left">
+
+                <img src="assets/img/person/office2.jpg" alt="Profile">
+
+                <h3 class="mt-3">Dorah Bloch</h3>
+
+                <p>Premium Member</p>
+
+                <button class="upload-btn">
+
+                    <i class="bi bi-camera-fill"></i>
+
+                    Change Photo
+
+                </button>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="col-lg-8 profile-right">
+
+                <h2>
+
+                    <i class="bi bi-person-circle"></i>
+
+                    My Profile
+
+                </h2>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <label>Full Name</label>
+
+                        <input type="text" class="form-control" value="Dorah Bloch">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label>Email</label>
+
+                        <input type="email" class="form-control" value="Dorah@email.com">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label>Phone Number</label>
+
+                        <input type="text" class="form-control" value="+254729664763">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label>Location</label>
+
+                        <input type="text" class="form-control" value="Nairobi">
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label>Delivery Address</label>
+
+                        <textarea class="form-control" rows="3">Westlands, Nairobi</textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="row mt-4">
+
+                    <div class="col-md-6">
+
+                        <button class="profile-btn">
+
+                            <i class="bi bi-heart-fill"></i>
+
+                            Wishlist
+
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <button class="profile-btn">
+
+                            <i class="bi bi-bag-check-fill"></i>
+
+                            My Orders
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <button class="profile-btn">
+
+                            <i class="bi bi-cart-fill"></i>
+
+                            Order Confirmation
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <button class="profile-btn">
+
+                            <i class="bi bi-lock-fill"></i>
+
+                            Change Password
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <button class="profile-btn logout">
+
+                            <i class="bi bi-box-arrow-right"></i>
+
+                            Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

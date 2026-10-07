@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/Dorahicon17.png" rel="icon">
+    <link href="assets/img/Dorahicon17.png" rel="icon">
+
+    <title>Shop-Page</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #680e0e;
+            color: #f76565;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .shop-hero {
+            background: linear-gradient(
+                rgba(109, 7, 26, .85),
+                rgba(109, 7, 26, .85)
+            ),
+            url("assets/img/cloth31.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            padding: 90px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .shop-hero h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .shop-hero h1 span {
+            color: #D4AF37;
+        }
+
+        .shop-hero p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* =========================
+           SHOP CONTAINER
+        ========================= */
+
+        .shop-container {
+            width: 92%;
+            max-width: 1250px;
+            margin: 50px auto;
+        }
+
+        /* =========================
+           CATEGORY BUTTONS
+        ========================= */
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            border: 2px solid #6D071A;
+            background: white;
+            color: #6D071A;
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #6D071A;
+            color: white;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        /* =========================
+           PRODUCT CARD
+        ========================= */
+
+        .product-card {
+            background: rgb(185, 36, 36);
+            border-radius: 20px;
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,.1);
+
+            transition: .4s;
+
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(109,7,26,.2);
+        }
+
+        /* =========================
+           PRODUCT IMAGE
+        ========================= */
+
+        .product-image {
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Wishlist */
+
+        .wishlist-btn {
+            position: absolute;
+
+            top: 15px;
+            right: 15px;
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: white;
+
+            color: #6D071A;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,.15);
+
+            transition: .3s;
+        }
+
+        .wishlist-btn:hover {
+            background: #6D071A;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* =========================
+           PRODUCT INFORMATION
+        ========================= */
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            color: #6D071A;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .product-description {
+            color: #f7f1f1;
+            font-size: 14px;
+            line-height: 1.6;
+
+            min-height: 45px;
+        }
+
+        .price {
+            color: #D4AF37;
+            font-size: 21px;
+            font-weight: 700;
+
+            margin: 15px 0;
+        }
+
+        /* =========================
+           ADD TO CART
+        ========================= */
+
+        .cart-btn {
+            width: 100%;
+
+            border: none;
+
+            background: #6D071A;
+
+            color: white;
+
+            padding: 12px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .cart-btn:hover {
+            background: #D4AF37;
+
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 15px rgba(0,0,0,.2);
+        }
+
+        /* =========================
+           RATING
+        ========================= */
+
+        .rating {
+            color: #D4AF37;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .products {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+        @media (max-width: 800px) {
+
+            .products {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .shop-hero h1 {
+                font-size: 40px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .shop-hero {
+                padding: 60px 20px;
+            }
+
+            .shop-hero h1 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="shop-hero">
+
+    <h1>
+        The<span>Corporate Closet</span>Shop
+    </h1>
+
+    <p>
+        Discover elegant fashion made for every occasion.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     SHOP
+========================= -->
+
+<main class="shop-container">
+
+
+    <!-- Categories -->
+    <div class="categories">
+
+        <a href="shop.html" class="category-btn active">
+            All
+        </a>
+
+        <a href="White tops.html" class="category-btn">
+            White
+        </a>
+
+        <a href="Yellow blouses.html" class="category-btn">
+            Yellow
+        </a>
+
+        <a href="Peach tops.html" class="category-btn">
+            Peach
+        </a>
+
+        <a href="Burgundy.html" class="category-btn">
+            Burgundy
+        </a>
+
+        <a href="Stripped tops.html" class="category-btn">
+            Stripped
+        </a>
+
+    </div>
+
+
+    <!-- Products -->
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth1.jpg"
+                        alt="Top 1">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Luxury Dress')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    White Top
+                </h3>
+
+                <p class="product-description">
+                    Provides a fresh, modern aesthetic, brings clean energy and endless styling possibilities to your daily wardrobe.
+                </p>
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Luxury Dress')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth2.jpg"
+                        alt="Top 2">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 2')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    White Top
+                </h3>
+
+                <p class="product-description">
+                    Delivers a crisp, minimalist appeal that keeps your outfit looking instantly chic and effortlessly put together.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 2')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth3.jpg"
+                        alt="Luxury Handbag">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 2 ')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Casual Wear
+                </h3>
+
+                <p class="product-description">
+                    This classic checked top adds a timeless pattern and a touch of effortless style to your everyday wardrobe.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 300
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 3')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth5.jpg"
+                        alt="Top 4">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 4')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    White Top
+                </h3>
+
+                <p class="product-description">
+                    Provides a fresh, modern aesthetic, brings clean energy and endless styling possibilities to your daily wardrobe.
+
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 4')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth11.jpg"
+                        alt="Oversized Top">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 5')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Oversized Top
+                </h3>
+
+                <p class="product-description">
+                    Delivers the ultimate blend of laid-back comfort.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 300
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 5')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth14.jpg"
+                        alt="Yellow Blouse">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 6')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Yellow Blouse
+                </h3>
+
+                <p class="product-description">
+                    Injects an instant burst of cheerful energy.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 6')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth15.jpg"
+                        alt="Maroon Shirt">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 7')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Maroon Shirt
+                </h3>
+
+                <p class="product-description">
+                    Effortless luxury.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 300
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 7')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth39.jpg"
+                        alt="Top 8">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 8')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Peach Top
+                </h3>
+
+                <p class="product-description">
+                    Understated top blends a calming, pastel tone.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 8')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth17.jpg"
+                        alt="Top 9">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 9')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    White Top
+                </h3>
+
+                <p class="product-description">
+                    Radiate style with white top, a bright and modern essential creates a clean canvas for any look.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 9')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth7.jpg"
+                        alt="Luxury Handbag">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Luxury Handbag')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Checked Red Top
+                </h3>
+
+                <p class="product-description">
+                    Perfect for mixing and matching, this introduces a smart, playful pattern that instantly elevates any casual look.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 300
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 10')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth18.webp"
+                        alt="Top 10">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 10')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    White Blouse
+                </h3>
+
+                <p class="product-description">
+                    Provides a fresh, modern aesthetic, brings clean energy and endless styling possibilities to your daily wardrobe.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 11')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth21.jpg"
+                        alt="Top 12">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 12')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Peach Top
+                </h3>
+
+                <p class="product-description">
+                    Delivers a sweet, sun-warmed glow to your outfit, making it the perfect piece for an effortlessly soft and stylish look
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 12')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth26.jpg"
+                        alt="Top 13">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 13')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Burgundy Top
+                </h3>
+
+                <p class="product-description">
+                    This versatile burgundy top brings a rich, jewel-toned elegance.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 13')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth27.jpg"
+                        alt="Top 14">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 14')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Stripped Top
+                </h3>
+
+                <p class="product-description">
+                    Effortlessly in style, structured pattern to your modern wardrobe.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 14')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth28.jpg"
+                        alt="Top 15">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 15')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Green Blouse
+                </h3>
+
+                <p class="product-description">
+                    Nature-inspired energy that instantly breathes life.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 15')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth29.jpg"
+                        alt="Top 16">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 16')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Stripped Top
+                </h3>
+
+                <p class="product-description">
+                    Reinvent your daily look with this modern striped top.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 2,900
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 16')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth32.jpg"
+                        alt="Top 17">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 17')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Burgundy Top
+                </h3>
+
+                <p class="product-description">
+                    Effortless sophistication and warmth to any outfit.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 17')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth37.jpg"
+                        alt="Top 18">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 18')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Yellow Tank Top
+                </h3>
+
+                <p class="product-description">
+                    A splash of warmth to your day with this radiant yellow top.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 600
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 18')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                        src="assets/img/cloth30.jpg"
+                        alt="Top 19">
+
+                <button class="wishlist-btn"
+                        onclick="addToWishlist('Top 19')">
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    Polka Dots
+                </h3>
+
+                <p class="product-description">
+                    Adds a playful yet sophisticated retro charm.
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="price">
+                    KSh 300
+                </div>
+
+                <button class="cart-btn"
+                        onclick="addToCart('Top 19')">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<script>
+
+    function addToCart(product) {
+
+        alert(product + " has been added to your cart!");
+
+    }
+
+
+    function addToWishlist(product) {
+
+        alert(product + " has been added to your wishlist!");
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
+

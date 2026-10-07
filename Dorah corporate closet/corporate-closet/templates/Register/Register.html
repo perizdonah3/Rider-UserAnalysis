@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/Dorahicon15.png" rel="icon">
+    <link href="assets/img/Dorahicon15.png" rel="icon">
+
+    <title>Create Account-Page</title>
+
+    <!-- Bootstrap Icons -->
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #6D071A;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        /* Main Registration Box */
+
+        .register-container {
+            width: 100%;
+            max-width: 1050px;
+            min-height: 650px;
+            background: rgb(199, 46, 46);
+            border-radius: 25px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Left Side */
+
+        .register-image {
+            width: 50%;
+            position: relative;
+            background-image: linear-gradient(
+                rgba(109, 7, 26, 0.45),
+                rgba(192, 47, 73, 0.7)
+            ),
+            url("assets/img/cloth26.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px;
+        }
+
+        .register-image-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .register-image-content h1 span {
+            color: #D4AF37;
+        }
+
+        .register-image-content p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .logo-icon {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        /* Right Side */
+
+        .register-form {
+            width: 50%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .register-form h2 {
+            color: #6D071A;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .register-form .subtitle {
+            color: #f3eded;
+            margin-bottom: 30px;
+        }
+
+        /* Input Fields */
+
+        .input-group {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6D071A;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 15px 14px 48px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #6D071A;
+            box-shadow: 0 0 0 3px rgba(109, 7, 26, 0.1);
+        }
+
+        /* Register Button */
+
+        .register-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            background: #6D071A;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .register-btn:hover {
+            background: #D4AF37;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Login Link */
+
+        .login-text {
+            text-align: center;
+            margin-top: 25px;
+            color: #f7f2f2;
+        }
+
+        .login-text a {
+            color: #6D071A;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .login-text a:hover {
+            color: #D4AF37;
+        }
+
+        /* Terms */
+
+        .terms {
+            font-size: 13px;
+            color: #f7f4f4;
+            margin-top: 15px;
+        }
+
+        .terms a {
+            color: #6D071A;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .register-container {
+                flex-direction: column;
+            }
+
+            .register-image {
+                width: 100%;
+                min-height: 280px;
+            }
+
+            .register-form {
+                width: 100%;
+                padding: 35px 25px;
+            }
+
+            .register-image-content h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="register-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="register-image">
+
+        <div class="register-image-content">
+
+            <!-- Replace with your actual icon -->
+            <img src="assets/img/Dorahicon16 copy.gif"
+                 alt="The Corporate Closet Logo"
+                 class="logo-icon">
+
+            <h1>Welcome to <span>The Corporate Closet</span></h1>
+
+            <p>
+                Discover elegant fashion blouses, timeless style,
+                and pieces made to make you feel confident.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="register-form">
+
+        <h2>Create Your Account</h2>
+
+        <p class="subtitle">
+            Join    The Corporate Closet and start shopping your favourite styles.
+        </p>
+
+
+        <form id="registerForm">
+
+            <!-- Full Name -->
+
+            <div class="input-group">
+
+                <i class="bi bi-person-fill"></i>
+
+                <input type="text" id="regName" name="name" placeholder="Full Name" required>
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="input-group">
+
+                <i class="bi bi-envelope-fill"></i>
+
+                <input type="email" id="regEmail" name="email" placeholder="Email Address" required>
+
+            </div>
+
+
+            <!-- Phone -->
+
+            <div class="input-group">
+
+                <i class="bi bi-telephone-fill"></i>
+
+                <input type="tel" id="regPhone" name="phone" placeholder="Phone Number" required>
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <i class="bi bi-lock-fill"></i>
+
+                <input type="password" id="regPassword" name="password" placeholder="Create Password" required>
+
+            </div>
+
+
+            <!-- Confirm Password -->
+
+            <div class="input-group">
+
+                <i class="bi bi-shield-lock-fill"></i>
+
+                <input type="password" id="regConfirm" name="confirm_password" placeholder="Confirm Password" required>
+
+            </div>
+
+
+            <div class="terms">
+
+                <input type="checkbox" required>
+
+                I agree to the
+                <a href="privacy.html">Privacy Policy</a>
+                and terms of use.
+
+            </div>
+
+
+            <button type="submit" class="register-btn">
+
+                <i class="bi bi-person-plus-fill"></i>
+
+                Create Account
+
+            </button>
+
+        </form>
+
+
+        <p class="login-text">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login here
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+<script type="module" src="assets/js/firebase-init.js"></script>
+
+<script>
+    // Registration form handler using firebase-init helpers
+    document.getElementById('registerForm').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const email = document.getElementById('regEmail').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const confirm = document.getElementById('regConfirm').value;
+      if(password !== confirm){
+        alert('Passwords do not match');
+        return;
+      }
+      try{
+        await window.registerWithEmail(email, password);
+        alert('Account created successfully. Please login.');
+        window.location.href = 'login.html';
+      }catch(err){
+        alert('Registration error: ' + (err && err.message ? err.message : err));
+      }
+    });
+</script>
+
+</body>
+
+</html>
